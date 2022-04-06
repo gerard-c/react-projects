@@ -3,13 +3,16 @@ import data from './data';
 import SingleQuestion from './Question';
 function App() {
   const questions = data.map((question) => {
-    return <SingleQuestion key={question.id} title={question.title} info={question.info} />
+    return <SingleQuestion key={question.id} {...question} />
   })
   console.log(questions);
   return (
-    <>
-      {questions}
-    </>
+    <div className="container">
+      <h3>Questions and Answers About Login</h3>
+      <section className="info">
+        {questions}
+      </section>
+    </div>
   )
 }
 

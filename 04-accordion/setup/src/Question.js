@@ -8,13 +8,13 @@ const Question = ({ title, info }) => {
   }
 
   return (
-    <div className="container">
+    <article className="question">
       <header>
-      <h2>{title}</h2>
-      <button onClick={toggleInfo}>{infoToggle ? <AiOutlineMinus /> : <AiOutlinePlus />}</button>
+        <h2>{title}</h2>
+        <button className="btn" onClick={toggleInfo}>{infoToggle ? <AiOutlineMinus /> : <AiOutlinePlus />}</button>
       </header>
-      <p>{infoToggle && info}</p>
-    </div>
+      {infoToggle && <p>{info}</p>}
+    </article>
   );
 };
 
