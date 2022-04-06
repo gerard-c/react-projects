@@ -1,13 +1,22 @@
 import React from 'react';
 
-const Categories = ({ filterItems }) => {
+const Categories = ({ categories, filterItems }) => {
 
-  const buttons = 'oi-oi-oi-oi';
+  const buttons = categories.map((category, index) => {
+    return (
+      <button
+        key={index}
+        className="filter-btn"
+        onClick={() => filterItems(category)}
+      >
+        {category}
+      </button>
+    );
+  });
 
   return (
     <div className="btn-container">
-      <button className="filter-btn" onClick={() => filterItems('all')}>All</button>
-      <button className="filter-btn" onClick={() => filterItems('breakfast')}>Breakfast</button>
+      {buttons}
     </div>
   );
 };
