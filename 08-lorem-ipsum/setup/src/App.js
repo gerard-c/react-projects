@@ -6,7 +6,9 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('form submitted!')
+    let amount = parseInt(count);
+
+    setText(data.slice(0, amount));
   }
 
   return (
@@ -26,8 +28,13 @@ function App() {
         <button type="submit" className="btn">generate</button>
       </form>
       <article className="lorem-text">
-        <p>The quick brown fox jumped over the lazy dog!! The quick brown fox jumped over the lazy dog!! The quick brown fox jumped over the lazy dog!! The quick brown fox jumped over the lazy dog!!</p>
-        <p>The quick brown fox jumped over the lazy dog!! The quick brown fox jumped over the lazy dog!! The quick brown fox jumped over the lazy dog!! The quick brown fox jumped over the lazy dog!!</p>
+        {text.map((item, index) => {
+          return (
+            <p key={index}>
+              {item}
+            </p>
+          );
+        })}
       </article>
     </section>
   );
