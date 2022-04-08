@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
 import { FaQuoteRight } from 'react-icons/fa';
 import Title from './components/Title';
+import Review from './components/Review';
 import data from './data';
 function App() {
   const [people, setPeople] = useState(data);
@@ -40,13 +41,14 @@ function App() {
             position = 'lastSlide';
           }
           return (
-            <article key={id} className={position}>
-              <img src={image} alt={name} className="person-img" />
-              <h4>{name}</h4>
-              <p className="title">{title}</p>
-              <p className="text">{quote}</p>
-              <FaQuoteRight className="icon" />
-            </article>
+            <Review
+              key={id}
+              image={image}
+              name={name}
+              title={title}
+              quote={quote}
+              position={position}
+            />
           );
         })}
         <button className="prev" onClick={(() => setIndex(index - 1))}>
