@@ -14,7 +14,16 @@ function App() {
     if (index > lastIndex) {
       setIndex(0);
     }
-  }, [index, people])
+  }, [index, people]);
+
+  useEffect(() => {
+    let autoSlide = setInterval(() => {
+      setIndex(index + 1);
+    }, 3000);
+    return (() => {
+      clearInterval(autoSlide);
+    })
+  }, [index])
 
   return (
     <section className="section">
