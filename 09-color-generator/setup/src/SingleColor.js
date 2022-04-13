@@ -26,7 +26,7 @@ const SingleColor = ({ rgb, weight, index, hexColor }) => {
         navigator.clipboard.writeText(hexValue);
       }}
     >
-      <p className="percent-value">{weight}</p>
+      <p className="percent-value">{weight}%</p>
       <p className="color-value">{hexValue}</p>
       {alert && <p className="alert">copied to clipboard</p>}
     </article>
