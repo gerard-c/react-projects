@@ -4,14 +4,18 @@ import rgbToHex from './utils'
 const SingleColor = ({ rgb, weight, index, hexColor }) => {
   const [alert, setAlert] = useState(false);
   const bcg = rgb.join(',')
+
+  // used for the sake of instruction
   const hex = rgbToHex(...rgb);
+
+  const hexValue = `#${hexColor}`
   return (
     <article
-      className={`color`}
+      className={`color ${index > 10 && 'color-light'}`}
       style={{ backgroundColor: `rgb(${bcg})` }}
     >
       <p className="percent-value">{weight}</p>
-      <p className="color-value">{hex}</p>
+      <p className="color-value">{hexValue}</p>
     </article>
   );
 }
