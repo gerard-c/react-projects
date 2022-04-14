@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { FaBars, FaTwitter } from 'react-icons/fa'
-import { links, social } from './data'
+import Sidebar from './Sidebar'
 import logo from './logo.svg'
 
 const Navbar = () => {
@@ -13,35 +13,7 @@ const Navbar = () => {
             <FaBars />
           </button>
         </div>
-        <div className="links-container show-container">
-          <ul className="links">
-            <li>
-              <a href="#">
-                home
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                about
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                contact
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                products
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                home
-              </a>
-            </li>
-          </ul>
-        </div>
+        <Sidebar />
         <ul className="social-icons">
           <li>
             <a href="https://www.twitter.com">
