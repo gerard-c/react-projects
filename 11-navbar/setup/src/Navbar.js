@@ -1,7 +1,8 @@
-import React, { useState, useRef, useEffect } from 'react'
-import { FaBars, FaTwitter } from 'react-icons/fa'
-import Sidebar from './Sidebar'
-import logo from './logo.svg'
+import React, { useState, useRef, useEffect } from 'react';
+import { FaBars, FaTwitter } from 'react-icons/fa';
+import Sidebar from './Sidebar';
+import Social from './Social';
+import logo from './logo.svg';
 
 const Navbar = () => {
   return (
@@ -14,26 +15,10 @@ const Navbar = () => {
           </button>
         </div>
         <Sidebar />
-        <ul className="social-icons">
-          <li>
-            <a href="https://www.twitter.com">
-              <FaTwitter />
-            </a>
-          </li>
-          <li>
-            <a href="https://www.twitter.com">
-              <FaTwitter />
-            </a>
-          </li>
-          <li>
-            <a href="https://www.twitter.com">
-              <FaTwitter />
-            </a>
-          </li>
-        </ul>
+        <Social />
       </div>
     </nav>
   );
 }
 
-export default Navbar
+export default Navbar;
