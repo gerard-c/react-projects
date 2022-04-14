@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { links } from './data'
 
-const Sidebar = () => {
+const Sidebar = ({ showLinks }) => {
+  
   return (
-    <div className="links-container show-container">
+    <div className={`${showLinks ? 'links-container show-container' : 'links-container'}`}>
       <ul className='links'>
         {links.map((link) => {
           const { id, url, text } = link;
